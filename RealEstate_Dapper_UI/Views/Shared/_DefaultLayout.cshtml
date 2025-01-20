@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "_DefaultLayout";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+@await Component.InvokeAsync("_HeaderViewComponentPartial")
+<body>
+
+    <!--header-->
+    @await Component.InvokeAsync("_NavbarViewComponentPartial")
+    <!--/header-->
+    
+    <!-- contacts -->
+    @RenderBody()
+    <!-- //contacts -->
+    <!-- footers 20 -->
+    @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultScriptComponentPartial")
+
+</body>
+
+</html>
+
