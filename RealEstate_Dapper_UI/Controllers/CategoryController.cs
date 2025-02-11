@@ -8,10 +8,12 @@ namespace RealEstate_Dapper_UI.Controllers
     public class CategoryController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
+
         public CategoryController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
+
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();

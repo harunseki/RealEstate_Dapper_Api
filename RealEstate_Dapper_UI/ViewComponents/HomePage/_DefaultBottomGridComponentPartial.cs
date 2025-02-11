@@ -4,7 +4,7 @@ using RealEstate_Dapper_UI.Dtos.BottomGridDtos;
 
 namespace RealEstate_Dapper_UI.ViewComponents.HomePage
 {
-    public class _DefaultBottomGridComponentPartial:ViewComponent
+    public class _DefaultBottomGridComponentPartial : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
@@ -13,18 +13,17 @@ namespace RealEstate_Dapper_UI.ViewComponents.HomePage
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync () 
-        { 
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
             var client = _httpClientFactory.CreateClient();
-
-            var responseMessage = await client.GetAsync("https://localhost:44396/api/BottomGrid");
-            if(responseMessage.IsSuccessStatusCode)
+            var responseMessage = await client.GetAsync("https://localhost:44396/api/BottomGrids");
+            if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var value = JsonConvert.DeserializeObject<List<BottomGridDto>>(jsonData);
-                return View(value);
+                var values = JsonConvert.DeserializeObject<List<ResultBottomGridDto>>(jsonData);
+                return View(values);
             }
-            return View(); 
+            return View();
         }
     }
 }

@@ -3,9 +3,9 @@
     public class ResultWhoWeAreDetailDto
     {
         public int WhoWeAreDetailID { get; set; }
-        public string title { get; set; }
-        public string subtitle { get; set; }
-        public string describtion1 { get; set; }
-        public string describtion2 { get; set; }
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
+        public string Description1 { get; set; }
+        public string Description2 { get; set; }
     }
 }

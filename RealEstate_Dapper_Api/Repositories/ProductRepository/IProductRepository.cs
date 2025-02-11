@@ -14,5 +14,9 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
         void UpdateCategory(UpdateProductDto categoryDto);
 
         void DeleteCategory(int id);
+
+        Task ProductDealOfTheDayStatusChangeToTrue(int id);
+
+        Task ProductDealOfTheDayStatusChangeToFalse(int id);
     }
 }
